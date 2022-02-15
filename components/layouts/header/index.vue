@@ -1,18 +1,27 @@
 <template>
    <header>
-      <div class="container">
-         <h2>#todo</h2>
-      </div>
+      <div class="randomButton" @click="random">random <span class="material-icons">autorenew</span></div>
    </header>
 </template>
 
 <style lang="scss">
 header {
-   height: 100px;
    display: flex;
    align-items: center;
-   h2 {
-      text-align: center;
+   justify-content: flex-end;
+
+   .randomButton {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 30px 50px;
+
+      cursor: pointer;
+
+      font: {
+         weight: 500;
+         size: 18px;
+      };
    }
 }
 </style>
@@ -21,6 +30,11 @@ header {
 import Vue from "vue"
 
 export default Vue.extend({
-   name: "Header"
+   name: "Header",
+   methods: {
+      random() {
+         this.$nuxt.$emit("random")
+      }
+   }
 })
 </script>
