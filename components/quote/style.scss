@@ -1,0 +1,53 @@
+.quote {
+   display: flex;
+   flex-direction: column;
+   gap: 160px;
+
+   .content {
+      font-size: 36px;
+      position: relative;
+
+      &:before {
+         content: "";
+         position: absolute;
+         height: 100%;
+         width: 8px;
+         background-color: $color-primary;
+         left: -100px;
+      }
+   }
+
+   .infos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 50px 30px;
+      cursor: pointer;
+
+      transition: .2s ease-in-out;
+
+      .left {
+         .author {
+            font: {
+               weight: 700;
+               size: 24px;
+            };
+         }
+
+         .genre {
+            font-size: 14px;
+            color: $color-smoke;
+         }
+      }
+
+      &:hover {
+         background-color: $color-text-black;
+         color: $color-text-white;
+      }
+
+      span {
+         color: $color-text-white;
+      }
+   }
+}
